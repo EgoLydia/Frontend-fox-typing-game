@@ -19,19 +19,19 @@ span:after {
   background-size: 100%;
 }
 
-#rocket {
+.rocket {
   display: block;
-  width: 60px;
-  height: 34px;
-  margin-left: 20px;
+  font-size: 30px;
   animation: shake 2s ease-out;
+  margin-left: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 640px) {
   main {
     display: grid;
     place-items: center;
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
   h1 {
     text-align: center;
@@ -48,14 +48,15 @@ span:after {
 
   button {
     display: flex;
-    margin: 0 auto;
-    padding: 13px;
+    padding: 20px;
     border: 0;
     border-radius: 50px;
     font-size: 1.5em;
     background-color: white;
     cursor: pointer;
     overflow: hidden;
+    margin-top: 1rem;
+
   }
 
   input {
@@ -70,6 +71,59 @@ span:after {
   .congrats {
     text-transform: uppercase;
     font-size: 2em;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+@media (min-width:768px) {
+  main {
+    display: grid;
+    place-items: center;
+    min-width: 640px;
+    margin-top: 4rem;
+    line-height: 2rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 105%;
+    color: white;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.6em;
+  }
+  button {
+    display: flex;
+    padding: 20px;
+    border: 0;
+    border-radius: 50px;
+    font-size: 1.6em;
+    background-color: white;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+
+  
+
+  input {
+    width: 300px;
+    padding: 20px;
+    font-size: 2em;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: inset 1px 0px 5px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .congrats {
+    text-transform: uppercase;
+    font-size: 3em;
     font-weight: bold;
     color: white;
   }
@@ -98,7 +152,6 @@ span:after {
   }
   button {
     display: flex;
-    margin: 0 auto;
     padding: 20px;
     border: 0;
     border-radius: 50px;
@@ -106,6 +159,8 @@ span:after {
     background-color: white;
     cursor: pointer;
     overflow: hidden;
+    margin-top: 1rem;
+
   }
 
   input {
@@ -123,6 +178,11 @@ span:after {
     font-weight: bold;
     color: white;
   }
+}
+
+.button-wrapper{
+  display: flex;
+  margin: 0;
 }
 
 body {

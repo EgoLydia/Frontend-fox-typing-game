@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Typing Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -15,9 +16,13 @@
         <p>Practice your typing skills with a quote from Star Trek.
             <br>Click the start button to begin!
         </p>
-        <button type="button" id="start" class="button">Start Game
-               <i id="rocket" class="ri-rocket-2-fill"></i>
-        </button>
+        <div class="button-wrapper">
+            <div>
+                <button type="button" id="start" class="button">Start Game
+                </button>
+            </div>
+            <p class="rocket">🚀</p>
+        </div>
         <p id="quote"></p>
         <p id="message"></p>
         <input type="text" id="typed-value">
