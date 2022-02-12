@@ -21,6 +21,7 @@ let highlightPosition;
 let startTime;
 
 function startGame() {
+  start.textContent= `Start Game`;
   document.body.className = "";
   message.innerHTML = "";
 
@@ -65,6 +66,7 @@ function checkInput() {
 
 function gameOver() {
   const elapsedTime = new Date().getTime() - startTime;
+  start.innerHTML= `Play Again`;
   document.body.className = "winner";
   message.innerHTML = `
     <span class="congrats">Congratulations! </span>;<br>
