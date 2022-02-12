@@ -3,13 +3,13 @@ const input = document.getElementById("typed-value");
 const start = document.getElementById("start");
 const message = document.getElementById("message");
 const quotes = [
-  "Live long and prosper!",
+  "Live long and prosper",
   "What does God need with a starship",
   "Logic is the beginning of wisdom, not the end",
-  "Live now; make now always the most precious time. Now will never come again",
+  "Live now make now always the most precious time. Now will never come again",
   "Could you please continue the petty bickering? I find it most intriguing",
   "You may find that having is not so pleasing a thing as wanting. This is not logical, but it is often true",
-  "Please, Mrs. Troi! … and it’s Worf, not Woof",
+  "Please, Mrs. Troi! and it’s Worf, not Woof",
   "Insufficient facts always invite danger",
   "I am a doctor, not a bricklayer",
   "Make it so!",
@@ -21,6 +21,9 @@ let highlightPosition;
 let startTime;
 
 function startGame() {
+  document.body.className = "";
+  message.innerHTML = "";
+
   const quoteIndex = Math.floor(Math.random() * quotes.length);
   const quoteText = quotes[quoteIndex];
 
@@ -31,11 +34,6 @@ function startGame() {
   quote.childNodes[highlightPosition].className = "highlight";
   startTime = new Date().getTime();
 
-  if (wordQueue.length === 0) {
-    gameOver();
-    return;
-  }
-
   document.body.className = "";
   start.className = "started";
   setTimeout(() => {
@@ -44,13 +42,14 @@ function startGame() {
 }
 
 function checkInput() {
-  const currentWord = wordQueue[0].replaceAll(".", "").replaceAll(",", "");
+  const currentWord = wordQueue[0];
   const typedValue = input.value;
 
   if (currentWord !== typedValue) {
     input.className = currentWord.startsWith(typedValue) ? "" : "error";
     return;
   }
+
   wordQueue.shift();
   input.value = "";
   quote.childNodes[highlightPosition].className = "";
@@ -59,6 +58,7 @@ function checkInput() {
     gameOver();
     return;
   }
+
   highlightPosition++;
   quote.childNodes[highlightPosition].className = "highlight";
 }
